@@ -1,0 +1,460 @@
+
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.delete-share-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+body {
+    background-color: #0c0817;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.chat-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.new-chat-button {
+    background-color: #673ab7;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.new-chat-button:hover {
+    background-color: #5e35b1;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 400px;
+    margin-top: 80px;
+    position: sticky;
+    top: 0;
+}
+
+.main-container {
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    display: flex;
+}
+
+.separate{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    text-align: start;
+    margin-bottom: 30px;
+    padding-left: 40px;
+    margin-top: 80px;
+}
+
+.chat-header h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.chat-header p {
+    font-size: 16px;
+    color: #bdbdbd;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    /* align-items: start; */
+    padding-left: 40px;
+    background-color: #100c1d;
+}
+
+.Generate{
+    justify-content: start;
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    margin-left: 10px;
+
+    
+}
+.generate{
+    margin-top: 52px;
+    text-align: start;
+    margin-left: 10px;
+}
+
+.Create{
+    justify-content: start;
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    margin-left: 10px;
+}
+
+.create{
+    margin-top: 52px;
+    text-align: start;
+    margin-left: 10px;
+}
+
+.button-create, .button-generate {
+    background-color: #100c1d;
+    /* padding: 20px; */
+    border-radius: 8px;
+    /* text-align: start; */
+    align-items: start;
+    width: 100px;
+    cursor: pointer;
+    height: 120%;
+    transition: background-color 0.3s;
+    border: 2px solid rgb(255, 250, 250);
+    color: #f8f7f7;
+}
+
+.button-create:hover, .button-generate:hover {
+    background-color: #444;
+}
+
+
+.buttons-container {
+    display: flex;
+    gap: 30px;
+    /* margin-bottom: 20px; */
+}
+
+/* Message Input Container */
+.message-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+    position: relative;
+    margin-top: 15px;
+    border-radius: 25px;
+}
+
+.send{
+    background-color: #ac6ffa;
+    border-radius: 10px;
+    height: 40px;
+    width: 50px;
+}
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.logo {
+    margin-right: 10px; 
+    height: 40px;
+}
+
+.input-inner-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    background-color: #f8f7f7;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.message-input {
+    background-color: transparent;
+    /* color: #000; */
+    border: none;
+    font-size: 16px;
+    resize: none; 
+     width: 100%;
+    /* height: 30px; */
+    /* margin-top: 10px; */
+    padding-right: 120px; 
+}
+
+.buttons-container-input {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+}
+
+.send-button-voice,
+.send-button-upload,
+.send-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.send-button-voice img,
+.send-button-upload img,
+.send-button img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+.send-button img{
+    margin-top: 8px;
+    padding-left: 5px;
+}
+
+
+
+
+/* Sidebar container */
+/* Container for the entire sidebar */
+.sidebar-container {
+    width: 300px;           /* Adjust as needed */
+    height: 100vh;          /* Full viewport height */
+    background-color: #1d142f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;    /* Rounded corners for the entire sidebar */
+    overflow: hidden;       /* Prevent content overflow */
+  }
+  
+  /* If you still want a collapsed/expanded state, you can use this class */
+  .sidebar-container.expanded {
+    width: 300px;           /* Adjust the expanded width if desired */
+  }
+  
+  /* Top row: Logo + back arrow */
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2b1d3f;  /* Slightly different color for contrast */
+    padding: 10px 16px;
+    border-radius: 16px;        /* Rounded corners for the top row */
+  }
+  
+  /* Logo inside the header row */
+  .logo img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  /* Back arrow (chevron) button on the right */
+  .back-btn {
+    background: #3a2c50;
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Sidebar body takes remaining space */
+  .sidebar-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Push bottom-section to the bottom */
+    margin-top: 10px;
+  }
+  
+  /* Top section: Noro AI Chat */
+  .top-section {
+    padding: 16px;
+  }
+  
+  /* Noro AI Chat style */
+  .chat-title {
+    display: flex;
+    align-items: center;
+    background-color: #291b3f;
+    border-left: 4px solid #a46eff;  /* Colored left border */
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .chat-title img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  
+  /* Bottom section: New Chat */
+  .bottom-section {
+    margin: 16px;
+  }
+  
+  /* New Chat button with plus icon */
+  .new-chat-btn {
+    background-color: #3a2c50;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  /* Additional styling if you still need a collapsed variant */
+  .sidebar-container:not(.expanded) {
+    width: 60px;  /* Collapsed width */
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Example of hiding text in collapsed state */
+  .sidebar-container.expanded {
+    width: 300px;
+  }
+  /* Old approach: hide text when not expanded */
+.sidebar-container:not(.expanded) .chat-title span,
+.sidebar-container:not(.expanded) .new-chat-btn span {
+  display: none;
+}
+
+
+/* .chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 200px); 
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: #3e3946;
+    color: white;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background-color:#0e0131;
+    color: white;
+} */
+
+
+/* Chat History Container */
+.chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 200px); /* Adjust based on your layout */
+    /* background-color: #f9f9f9; */
+    border-radius: 10px;
+    border: 2px solid white;
+    margin-bottom: 20px;
+}
+
+/* Message Container */
+.message-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.message-container.user {
+    justify-content: flex-end;
+}
+
+.message-container.bot {
+    justify-content: flex-start;
+}
+
+/* Avatar Styling */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: white;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Message Bubble Styling */
+.message-bubble {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message-bubble.user {
+    background-color: #3e3946;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.message-bubble.bot {
+    background-color:#0e0131;
+    border-bottom-left-radius: 5px;
+}
+
+/* Message Actions (Edit and Copy Icons) */
+.message-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.message-actions button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+}
+    
